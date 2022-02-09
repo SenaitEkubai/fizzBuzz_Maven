@@ -4,6 +4,8 @@
     THEN report the number of fizz, buzz and fizzbuzz instances found between those two numbers
     * */
 
+    import org.json.simple.JSONObject;
+
     import java.util.ArrayList;
 
     public class FizzBuzzInstances {
@@ -11,7 +13,7 @@
         static ArrayList<Integer>  buzzs =new ArrayList();
         static ArrayList<Integer>  fizzBuzzs =new ArrayList();
         static ArrayList<Integer>  others =new ArrayList();
-
+        static JSONObject jsonObject = new JSONObject();
         public static void main(String[] args) {
             fizzInstancesCounter(5,15);
         }
@@ -23,6 +25,7 @@
          int num_buzz=0;
          int num_fizzBuzz=0;
          int other=0;
+
 
         while (min < max-1){
             min++;
@@ -46,6 +49,13 @@
       }
             System.out.println("number of fizz= "+ num_fizz + ", number of buzz="+ num_buzz + ", number of fizzbuzz= "+ num_fizzBuzz + ", other= "+other);
             System.out.println("fizzs= " + fizzs + " buzzs= "+ buzzs+" fizzBuzzs= "+ fizzBuzzs + "other= "+ others);
+            jsonObject.put("other", other);
+            jsonObject.put("fizz",num_fizz);
+            jsonObject.put("buzz", num_buzz);
+            jsonObject.put("fizzbuzz",num_fizzBuzz);
+
+        System.out.println(jsonObject);
+
 
         }
     }
