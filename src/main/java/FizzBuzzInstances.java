@@ -7,20 +7,18 @@
     import java.util.ArrayList;
 
     public class FizzBuzzInstances {
+        static ArrayList<Integer>  fizzs =new ArrayList();
+        static ArrayList<Integer>  buzzs =new ArrayList();
+        static ArrayList<Integer>  fizzBuzzs =new ArrayList();
+        static ArrayList<Integer>  others =new ArrayList();
+
         public static void main(String[] args) {
             fizzInstancesCounter(5,15);
         }
 
     public static void fizzInstancesCounter(int x, int y){
-
-         ArrayList<Integer>  fizzs =new ArrayList();
-         ArrayList<Integer>  buzzs =new ArrayList();
-         ArrayList<Integer>  fizzBuzzs =new ArrayList();
-         ArrayList<Integer>  others =new ArrayList();
-
          int min = Math.min(x,y);
          int max = Math.max(x,y);
-
          int num_fizz=0;
          int num_buzz=0;
          int num_fizzBuzz=0;
@@ -47,7 +45,7 @@
         }
       }
             System.out.println("number of fizz= "+ num_fizz + ", number of buzz="+ num_buzz + ", number of fizzbuzz= "+ num_fizzBuzz + ", other= "+other);
-            System.out.println("fizzs= " + fizzs + "buzzs= "+ buzzs+" fizzBuzzs= "+ fizzBuzzs + "other= "+ others);
+            System.out.println("fizzs= " + fizzs + " buzzs= "+ buzzs+" fizzBuzzs= "+ fizzBuzzs + "other= "+ others);
 
         }
     }
