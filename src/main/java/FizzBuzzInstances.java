@@ -7,7 +7,7 @@ public class FizzBuzzInstances {
     static int other = 0;
 
     public static void main(String[] args) {
-       // fizzInstancesCounter(0, 15);
+        //  fizzInstancesCounter(0,16);
     }
 
     public static void fizzInstancesCounter(int x, int y) {
@@ -30,23 +30,5 @@ public class FizzBuzzInstances {
                 "number of fizz= " + num_fizz + ", number of buzz=" + num_buzz + ", number of fizzbuzz= " + num_fizzBuzz
                         + ", other= " + other);
     }
-    /*
-    public static void addReportAndCreateJsonFile() {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("other", other);
-        jsonObject.put("fizz", num_fizz);
-        jsonObject.put("buzz", num_buzz);
-        jsonObject.put("fizzbuzz", num_fizzBuzz);
-        try {
-            FileWriter file = new FileWriter("src/result.json");
-            file.write(String.valueOf(jsonObject));
-            file.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-        System.out.println("JSON file created: " + jsonObject);
-    }
-
-*/
 
 }

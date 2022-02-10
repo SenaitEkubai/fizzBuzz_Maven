@@ -5,22 +5,23 @@ import java.io.IOException;
 
 public class ReportInJsonFormat {
     public static void main(String[] args) {
-        FizzBuzzInstances.fizzInstancesCounter(1,25);
+        FizzBuzzInstances.fizzInstancesCounter(1, 25);
         addReportAndCreateJsonFile();
     }
+
     public static void addReportAndCreateJsonFile() {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("other", FizzBuzzInstances.other);
-        jsonObject.put("fizz", FizzBuzzInstances.num_fizz);
-        jsonObject.put("buzz", FizzBuzzInstances.num_buzz);
-        jsonObject.put("fizzbuzz", FizzBuzzInstances.num_fizzBuzz);
+        JSONObject result = new JSONObject();
+        result.put("other", FizzBuzzInstances.other);
+        result.put("fizz", FizzBuzzInstances.num_fizz);
+        result.put("buzz", FizzBuzzInstances.num_buzz);
+        result.put("fizzbuzz", FizzBuzzInstances.num_fizzBuzz);
         try {
             FileWriter file = new FileWriter("src/result.json");
-            file.write(String.valueOf(jsonObject));
+            file.write(String.valueOf(result));
             file.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("JSON file created: " + jsonObject);
+        System.out.println("JSON file created successfully: " + result);
     }
 }
