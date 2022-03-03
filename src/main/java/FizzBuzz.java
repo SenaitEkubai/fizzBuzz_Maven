@@ -1,26 +1,17 @@
+
 public class FizzBuzz {
 
-    public static void main(String[] args) {
-        fizzBuzz(15);
-        fizzBuzz(3);
-        fizzBuzz(5);
-        fizzBuzz(17);
-        fizzBuzz(100);
-    }
-
-    public static String fizzBuzz(int num) {
-        if (num % 3 == 0 && num % 5 == 0) {
-            System.out.println("FIZZBUZZ");
-            return "FIZZBUZZ";
+    public static StringBuilder fizzBuzz(int num) {
+        StringBuilder result = new StringBuilder();
+        if (num % 15 == 0) {
+            result.append("fizzBuzz");
         } else if (num % 3 == 0) {
-            System.out.println("FIZZ");
-            return "FIZZ";
+            result.append("fizz");
         } else if (num % 5 == 0) {
-            System.out.println("BUZZ");
-            return "BUZZ";
+            result.append("buzz");
         } else {
-            System.out.println(num);
-            return "" + num;
+            result.append(num);
         }
+        return result;
     }
 }
