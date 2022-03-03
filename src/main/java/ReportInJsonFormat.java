@@ -1,27 +1,33 @@
 import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
-import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class ReportInJsonFormat {
-    public static void main(String[] args) {
-        FizzBuzzInstances.fizzInstancesCounter(1, 25);
-        addReportAndCreateJsonFile();
+  /*public static void main(String[] args){
+       // addReportAndCreateJsonFile();
+      addReportAndCreateJsonFile( FizzBuzzInstances.fizzInstancesCounter(0,16));
+
     }
 
-    public static void addReportAndCreateJsonFile() {
-        JSONObject result = new JSONObject();
-        result.put("other", FizzBuzzInstances.other);
-        result.put("fizz", FizzBuzzInstances.num_fizz);
-        result.put("buzz", FizzBuzzInstances.num_buzz);
-        result.put("fizzbuzz", FizzBuzzInstances.num_fizzBuzz);
-        try {
+
+*/
+
+   public static JSONObject addReportAndCreateJsonFile(HashMap instances) {
+     JSONObject result = new JSONObject();
+
+       try{
+           instances.forEach((key, value) -> result.put(key,value));
+
             FileWriter file = new FileWriter("src/result.json");
             file.write(String.valueOf(result));
             file.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("JSON file created successfully: ");
+        }catch (Exception e){
+          e.getStackTrace();
         }
-        System.out.println("JSON file created successfully: " + result);
+        return result;
     }
 }
